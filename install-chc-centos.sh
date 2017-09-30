@@ -1,12 +1,12 @@
 #!/bin/sh
-#Version 0.1.1.2
+#Version 0.1.1.2a
 #Info: Installs Chaincoind daemon, Masternode based on privkey, and a simple web monitor.
 #Chaincoin Version 0.9.3 or above
 #Tested OS: CentOS 7
 #TODO: make script for CentOS's Geek
 #TODO: remove dependency on sudo user account to run script (i.e. run as root and specifiy chaincoin user so chaincoin user does not require sudo privileges)
 #TODO: add specific dependencies depending on build option (i.e. gui requires QT4)
-#Editor hisyamnasir[at]gmail.com - HisyamNasir / LowKey
+# hisyamnasir[at]gmail.com - HisyamNasir / LowKey
 
 noflags() {
     echo "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"
@@ -130,6 +130,19 @@ createhttp() {
         echo "Web Server Started!  You can now access your stats page at http://$mnip:8000"
 }
 
+
+installcsf() {
+       message "Installing csf.."
+       yum install perl-libwww-perl net-tools perl-LWP-Protocol-https bind-utils -y
+       cd /usr/src
+       rm -fv csf.tgz
+       wget https://download.configserver.com/csf.tgz
+       tar -xzf csf.tgz
+       cd csf
+       sh install.sh
+}
+
+
 install() {
         prepdependencies
         miniupnpc
@@ -139,6 +152,7 @@ install() {
         compile $1
         createconf
         createhttp
+        installcsf
         success
 }
 
