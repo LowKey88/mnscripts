@@ -9,7 +9,7 @@
 # hisyamnasir[at]gmail.com - HisyamNasir / LowKey
 
 noflags() {
-        echo "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"
+    echo "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"
     echo "Usage: install-mn [options]"
     echo "Valid options are:"
     echo "MASTERNODE_PRIVKEY(Required)"
@@ -134,7 +134,7 @@ install() {
         prepdependencies
         miniupnpc
         settime
-        #createswap
+        createswap
         clonerepo
         compile $1
         createconf
