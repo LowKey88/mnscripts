@@ -6,7 +6,7 @@
 #TODO: make script for CentOS's Geek
 #TODO: remove dependency on sudo user account to run script (i.e. run as root and specifiy chaincoin user so chaincoin user does not require sudo privileges)
 #TODO: add specific dependencies depending on build option (i.e. gui requires QT4)
-# hisyamnasir[at]gmail.com - HisyamNasir / LowKey
+#Editor hisyamnasir[at]gmail.com - HisyamNasir / LowKey
 
 noflags() {
     echo "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"
