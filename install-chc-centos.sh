@@ -1,5 +1,5 @@
 #!/bin/sh
-#Version 0.1.1.2a
+#Version 0.1.1.2
 #Info: Installs Chaincoind daemon, Masternode based on privkey, and a simple web monitor.
 #Chaincoin Version 0.9.3 or above
 #Tested OS: CentOS 7
